@@ -7,14 +7,14 @@
   ],
   "customManagers": [
     {
-      "description": "This custom manager updates 'Kong/public-shared-actions' in YAML files located in '.github/', 'workflow-templates', or similar directories. The 'fileMatch' patterns match workflows and actions, aligning with the expressions used by the 'github-actions' manager (https://docs.renovatebot.com/modules/manager/github-actions/). It identifies dependencies with or without digests (e.g., '@v2.8.0' or '@digest # v2.8.0')",
+      "description": "This custom manager updates 'pankajmouriyakong/shared-actions-pankaj' in YAML files located in '.github/', 'workflow-templates', or similar directories. The 'fileMatch' patterns match workflows and actions, aligning with the expressions used by the 'github-actions' manager (https://docs.renovatebot.com/modules/manager/github-actions/). It identifies dependencies with or without digests (e.g., '@v2.8.0' or '@digest # v2.8.0')",
       "customType": "regex",
       "fileMatch": [
         "(^|/)(workflow-templates|\\.(?:github|gitea|forgejo)/(?:workflows|actions))/.+\\.ya?ml$",
         "(^|/)action\\.ya?ml$"
       ],
       "matchStrings": [
-        "(?<packageName>Kong\\/public-shared-actions\\/(?<depName>[^\\s@]+))@(?:(?<currentDigest>[^\\s]+) # )?v(?<currentValue>[^\\s]+)"
+        "(?<packageName>pankajmouriyakong\\/shared-actions-pankaj\\/(?<depName>[^\\s@]+))@(?:(?<currentDigest>[^\\s]+) # )?v(?<currentValue>[^\\s]+)"
       ],
       "datasourceTemplate": "github-tags",
       "extractVersionTemplate": "^(?:@{{{depName}}}@|v)(?<version>[0-9\\.]+)$",
@@ -24,8 +24,8 @@
   ],
   "packageRules": [
     {
-      "description": "Manage Kong/public-shared-actions updates using the custom manager, so disable the default GitHub Actions manager for these",
-      "matchPackageNames": ["Kong/public-shared-actions"],
+      "description": "Manage pankajmouriyakong/shared-actions-pankaj updates using the custom manager, so disable the default GitHub Actions manager for these",
+      "matchPackageNames": ["pankajmouriyakong/shared-actions-pankaj"],
       "matchManagers": ["github-actions"],
       "enabled": false
     },
